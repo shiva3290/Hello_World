@@ -1,0 +1,21 @@
+================Yum Repository Installation in RHEL_7========
+Step1: Login to the RHEL_7 host.
+Step2: Create a new directory under /
+#mkdir /rhel7-repo
+Step3: Mount the RHEL_7 dvd to the above created directory.
+#mount /dev/cdrom /rhel7-repo
+Step4: Now change into directory rhel7-repo
+#cd /rhel7-repo
+Step5: List the direcotry
+#ls -lrt
+Step6:Now configure the Repo file
+#vi /etc/yum.repos.d/rhel_7.repo
+[rhel7_dvd]
+gpgcheck = 0
+enabled = 1
+baseurl = file:///rhel7-repo
+name = yumserver
+-->Save the file.
+#yum clean all
+#yum repolist
+========================END=======================================
